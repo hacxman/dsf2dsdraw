@@ -29,8 +29,7 @@ if (CMAKE_COMPILER_IS_GNUCC)
   add_definitions(
       -pipe
       -Wall -Wextra -Wcast-align -Wpointer-arith
-      -Wno-unused-parameter -msse2
-      -fopenmp)
+      -Wno-unused-parameter -msse2)
 endif (CMAKE_COMPILER_IS_GNUCC)
 
 if (MSVC)
@@ -53,7 +52,7 @@ elseif(APPLE)
   set(CMAKE_C_STANDARD_LIBRARIES "${CMAKE_CXX_STANDARD_LIRARIES} -liconv -lpthread")
 else()
   add_definitions(-D_FILE_OFFSET_BITS=64)
-  set(CMAKE_C_STANDARD_LIBRARIES "${CMAKE_CXX_STANDARD_LIRARIES} -lpthread -fopenmp")
+  set(CMAKE_C_STANDARD_LIBRARIES "${CMAKE_CXX_STANDARD_LIRARIES} -lpthread")
 endif()
 
 file(GLOB libcommon_headers ../../libs/libcommon/*.h)
