@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
     fprintf(stderr, "usage: %s [-q] file.dsf\n\n\t-q is quiet\nRead SONY DSF file and produce RAW multichannel DSD stream to stdout\n", argv[0]);
     return -1;
   }
-  int verbose = (argc == 3) && (argc[1][0] == '-') && (argc[1][1] == 'q') ? 0 : 1;
+  int verbose = (argc == 3) && (argv[1][0] == '-') && (argv[1][1] == 'q') ? 0 : 1;
   convert(argv[1], verbose);
   return 0;
 };
